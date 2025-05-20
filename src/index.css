@@ -1,1 +1,93 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans text-gray-800 antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-medium text-gray-900 leading-tight;
+    }
+}
+
+@layer components {
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg text-base font-medium shadow-sm transition-all duration-300;
+    }
+
+    .btn-primary {
+        @apply btn bg-green-500 hover:bg-green-600 text-white;
+    }
+
+    .btn-secondary {
+        @apply btn bg-orange-400 hover:bg-orange-500 text-white;
+    }
+
+    .btn-outline {
+        @apply btn border-green-500 text-green-600 hover:bg-green-50;
+    }
+
+    .section {
+        @apply py-16 md:py-24;
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold mb-4 text-center;
+    }
+
+    .section-subtitle {
+        @apply text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12;
+    }
+
+    .card {
+        @apply bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+    }
+
+    .glass-card {
+        @apply bg-white bg-opacity-70 backdrop-blur-lg rounded-2xl shadow-lg border border-white border-opacity-20;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Staggered animations for children */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stagger-children.animate > *:nth-child(1) { animation: fadeIn 0.5s ease-out 0.1s forwards; }
+.stagger-children.animate > *:nth-child(2) { animation: fadeIn 0.5s ease-out 0.2s forwards; }
+.stagger-children.animate > *:nth-child(3) { animation: fadeIn 0.5s ease-out 0.3s forwards; }
+.stagger-children.animate > *:nth-child(4) { animation: fadeIn 0.5s ease-out 0.4s forwards; }
+.stagger-children.animate > *:nth-child(5) { animation: fadeIn 0.5s ease-out 0.5s forwards; }
+.stagger-children.animate > *:nth-child(6) { animation: fadeIn 0.5s ease-out 0.6s forwards; }
