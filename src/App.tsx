@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import {Hero} from "./components/Hero.tsx";
 import {FeaturedProducts} from "./components/FeaturedProducts.tsx";
 import {CartProvider} from "./context/CartContext.tsx";
+import {About} from "./components/About.tsx";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <main>
                     <Hero/>
                     <FeaturedProducts/>
+                    <About/>
                 </main>
 
             </div>
