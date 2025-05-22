@@ -5,6 +5,7 @@ import {FeaturedProducts} from "./components/FeaturedProducts.tsx";
 import {CartProvider} from "./context/CartContext.tsx";
 import {About} from "./components/About.tsx";
 import {Nutrition} from "./components/Nutrition.tsx";
+import {Testimonials} from "./components/Testimonials.tsx";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <FeaturedProducts/>
                     <About/>
                     <Nutrition/>
+                    <Testimonials/>
                 </main>
 
             </div>
