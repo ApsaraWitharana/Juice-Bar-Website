@@ -7,6 +7,7 @@ import {About} from "./components/About.tsx";
 import {Nutrition} from "./components/Nutrition.tsx";
 import {Testimonials} from "./components/Testimonials.tsx";
 import {StoreLocator} from "./components/StoreLocator.tsx";
+import {Contact} from "lucide-react";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Nutrition/>
                     <Testimonials/>
                     <StoreLocator/>
+                    <Contact/>
                 </main>
 
             </div>
