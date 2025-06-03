@@ -8,6 +8,7 @@ import {Nutrition} from "./components/Nutrition.tsx";
 import {Testimonials} from "./components/Testimonials.tsx";
 import {StoreLocator} from "./components/StoreLocator.tsx";
 import {Contact} from "lucide-react";
+import {Footer} from "./components/Footer.tsx";
 
 function App() {
     return (
@@ -24,7 +25,7 @@ function App() {
                     <StoreLocator/>
                     <Contact/>
                 </main>
-
+            <Footer/>
             </div>
         </CartProvider>
     );
