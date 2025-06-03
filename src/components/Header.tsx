@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-
+import { Cart } from './Cart';
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const { getCartCount } = useCart();
 
   useEffect(() => {
@@ -59,7 +60,7 @@ export const Header: React.FC = () => {
             <div className="hidden md:flex items-center space-x-6">
               <button
                   className="btn-outline py-2 px-4 relative"
-
+                  onClick={() => setIsCartOpen(true)}
               >
                 <ShoppingBag className="w-5 h-5 mr-2" />
                 Cart ({getCartCount()})
@@ -101,6 +102,7 @@ export const Header: React.FC = () => {
               <button
                   className="btn-outline w-full py-2 justify-center"
                   onClick={() => {
+                    setIsCartOpen(true);
                     setIsOpen(false);
                   }}
               >
@@ -111,6 +113,7 @@ export const Header: React.FC = () => {
           </div>
         </header>
 
+        <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       </>
   );
 };
